@@ -47,14 +47,15 @@ struct PointRange {
     Value get(int i, int j) {
         i += base - 1;
         j += base + 1;
-        Value res = Value();
+        Value res_left = Value();
+        Value res_right = Value();
         while (j - i > 1) {
-            if (i % 2 == 0) res = res + values[i+1];
-            if (j % 2 == 1) res = res + values[j-1];
+            if (i % 2 == 0) res_left = res_left + values[i+1];
+            if (j % 2 == 1) res_right = values[j-1] + res_right;
             i /= 2;
             j /= 2;
         }
-        return res;
+        return res_left + res_right;
     }
 };
 
