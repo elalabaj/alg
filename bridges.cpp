@@ -1,5 +1,3 @@
-#include <algorithm>
-#include <iostream>
 #include <vector>
 
 void dfs(int v, int u, int& t, std::vector<std::vector<int>>& graph, std::vector<bool>& visited, 
